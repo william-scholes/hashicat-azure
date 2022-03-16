@@ -1,3 +1,12 @@
+//--------------------------------------------------------------------
+// Modules
+module "network" {
+  source  = "app.terraform.io/Test-Org-williamscholes/network/azurerm"
+  version = "3.5.0"
+
+  resource_group_name = "RG_"
+}
+
 provider "azurerm" {
   features {}
 }
@@ -26,13 +35,4 @@ module "network" {
   }
 
   depends_on = [azurerm_resource_group.example]
-}
-
-//--------------------------------------------------------------------
-// Modules
-module "network" {
-  source  = "app.terraform.io/Test-Org-williamscholes/network/azurerm"
-  version = "3.5.0"
-
-  resource_group_name = "RG_"
 }
